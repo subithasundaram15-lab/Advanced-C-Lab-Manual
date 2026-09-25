@@ -15,7 +15,7 @@ Else
 6.	Return 0
  
 Program:
-```
+
 #include <stdio.h>
 
 struct eligible {
@@ -38,7 +38,7 @@ int main() {
     }
     return 0;
 }
-```
+
 
 
 Output:
