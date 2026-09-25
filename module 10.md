@@ -9,14 +9,43 @@ Algorithm:
 4.	Call the search function and perform other linked list operations as needed.
  
 Program:
+```
+struct Node{
+    int data; 
+    struct Node *next;
+}*head;
 
-//type your code here
+void search(int data)
+{
+ 
+ struct Node*temp=head;
+ int flag=0;
+ int i=0;
+ while(temp->data!=data)
+ {
+     i++;
+     if(temp->next!=NULL)
+     temp=temp->next;
+     else break;
+     
+ }
+ if(temp->data==data)
+ {
+     printf("item %d found at location %d",data,i+1);
+     flag=1;
+ }
+ if(flag==0)
+ {
+     printf("Item not found");
+ }
+ 
+    
+}
+```
 
 Output:
 
-//paste your output here
-
-
+<img width="794" height="528" alt="image" src="https://github.com/user-attachments/assets/6438232a-36fe-4fd2-9835-b6bbeb80e6ef" />
 
 Result:
 Thus, the program to search a given element in the given linked list is verified successfully.
@@ -34,11 +63,35 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node{
+    int data; 
+    struct Node *next;
+}*head;
+
+
+void insert(int data)
+{
+    struct Node* n=(struct Node*)malloc(sizeof(struct Node));
+    struct Node* temp=head;
+    n->data=data;
+    n->next=NULL;
+    if(head==NULL){
+        
+        head=n;
+    }else{
+        while(temp->next!=NULL){
+            temp=temp->next;
+        }
+        temp->next=n;
+        
+    }
+}
+```
 
 Output:
 
-//paste your output here
+<img width="382" height="526" alt="image" src="https://github.com/user-attachments/assets/fc0ab9f6-e1a7-49dc-ae6d-5ec772da180c" />
 
  
 Result:
@@ -58,11 +111,29 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node
+{
+    struct Node *prev;
+    struct Node *next;
+    int data;
+}*head;
+
+void display()
+{
+    struct Node* temp=head;
+    while(temp!=NULL)
+    {
+        printf("%d\n",temp->data);
+        temp=temp->next;
+    }
+    
+}
+```
 
 Output:
 
-//paste your output here
+<img width="696" height="878" alt="image" src="https://github.com/user-attachments/assets/b7128c00-271c-4126-a36c-4b8ebf61b320" />
 
 
 Result:
@@ -83,12 +154,37 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node
+{
+    struct Node *prev;
+    struct Node *next;
+    float data;
+}*head;
+
+void insert(float data)
+{
+    struct Node* n=(struct Node*)malloc(sizeof(struct Node));
+    struct Node* temp=head;
+    n->data=data;
+    n->next=NULL;
+    if(head==NULL){
+        head=n;
+        return;
+    }
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    temp->next=n;
+    
+    
+}
+
+```
 
 Output:
 
-//paste your output here
-
+<img width="429" height="472" alt="image" src="https://github.com/user-attachments/assets/b134625b-ba99-44f0-81df-a9e6d5a68340" />
 
 Result:
 Thus, the program to insert an element in doubly linked list is verified successfully.
@@ -125,14 +221,81 @@ o	If the element is not found in any node, print a message indicating the elemen
 
 Program:
 
-//type your code here
+```
+
+struct Node
+{
+    int data; 
+    struct Node *next;
+}*head;
+void display()
+{
+    struct Node* temp=head;
+    while(temp!=NULL)
+    {
+        printf("%d ",temp->data);
+        temp=temp->next;
+    }
+}
+void insert(int data)
+{
+    struct Node* temp=head;
+    struct Node* ptr=(struct Node*)malloc(sizeof(struct Node));
+    ptr->data=data;
+    ptr->next=NULL;
+    if(head==NULL)
+    {
+        head=ptr;
+    }else
+    {
+        while(temp->next!=NULL)        {
+            temp=temp->next;
+        }
+        temp->next=ptr;
+    }
+}
+void search(int data)
+{
+    int i=1;
+    struct Node* temp=head;
+    if(head==NULL)
+    {
+        printf("Elements not found");
+    }else
+    {
+        while(temp!=NULL)
+        {
+            
+            if(temp->data==data)
+            {
+                printf("item %d found at location %d\n",data,i);
+                return;
+            }
+            i++;
+            temp=temp->next;
+        }
+        printf("Item not found\n");
+    }
+}
+void delete()
+{
+    struct Node* temp=head;
+    if(head==NULL)
+    {
+        printf("UNDERFLOW");
+    }else
+    {
+        head=head->next;
+        free(temp);
+        printf("Node deleted\n");
+    }
+    
+}
+```
 
 Output:
 
-//paste your output here
-
-
-
+<img width="954" height="750" alt="image" src="https://github.com/user-attachments/assets/8d64c0a4-0958-4f37-beb4-099b3e23c059" />
 
 
 Result:
